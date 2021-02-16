@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+}
+
+#title {
+    color: white;
+    padding: 15px;
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+}
+
+.nav-item {
+    padding: 15px;
+}
+
+#top-content {
+    background-color: black;
+    display: flex;
+    justify-content: flex-start;
+}
