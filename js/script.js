@@ -9,9 +9,12 @@ const movieSearchable = document.querySelector('#movies-searchable');
 
 function movieSection(movies) { //Return movie image information
     return movies.map((movie) => {
-        return `
-            <img src=${IMAGE_URL + movie.poster_path} data-movie-id=${movie.id}/>
-        `;
+        if (movie.poster_path) {
+            return `<img
+                src=${IMAGE_URL + movie.poster_path}
+                data-movie-id=${movie.id}
+            />`;
+        }
     })
 }
 
@@ -35,6 +38,13 @@ function createMovieContainer(movies) {
     return movieElement;
 }
 
+function renderSearchMovies(data) {
+    movieSearchable.innerHTML = ''; //Clear previous data
+    const movies = data.results; //Contains movie data taken from API
+    const movieBlock = createMovieContainer(movies);
+     movieSearchable.appendChild(movieBlock);
+    console.log("Data: ", data);
+}
 
 $(searchId).on("click", function(event) { //Initiate API search on click
     event.preventDefault();
@@ -43,11 +53,8 @@ $(searchId).on("click", function(event) { //Initiate API search on click
 
     fetch(newUrl)
         .then((res) => res.json())
-        .then((data) => {
-            const movies = data.results; //Contains movie data taken from API
-            const movieBlock = createMovieContainer(movies);
-            movieSearchable.appendChild(movieBlock);
-            console.log("Data: ", data);
-        })
+        .then(renderSearchMovies)
+
+    inputId.value = '';
     console.log("Value: ", value);
 });

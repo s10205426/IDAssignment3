@@ -35,6 +35,10 @@ body {
     border-radius: 7px;
 }
 
+#movies-searchable {
+    margin-top: 20px;
+}
+
 #inputValue {
     width: 750px;
     padding: 5px 4.5px;
@@ -50,4 +54,21 @@ body {
 
 .form-group {
     margin-bottom: 10px;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+
+section img {
+    width: 300px;
+    transition: 250ms all;
+}
+
+img:hover {
+    margin-left: 0 30px;
+    transform: scale(1.2);
+    cursor: pointer;
 }
