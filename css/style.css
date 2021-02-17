@@ -55,13 +55,37 @@ body {
     border-radius: 7px;
 }
 
+#main-content {
+    width: 800px;
+    padding: 15px;
+    background-color: rgb(58, 58, 58);
+}
+
+h1 {
+    color: rgb(131, 131, 131);
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size: 10;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 800;
+}
+
+p {
+    color: rgb(218, 218, 218);
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size: 10;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 800;
+}
+
 #movies-searchable {
     margin: 35px;
     padding: 75px;
 }
 
 #inputValue {
-    width: 750px;
+    width: 700px;
     padding: 5px 4.5px;
     font-weight: 400;
     line-height: 1.5;
