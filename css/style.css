@@ -4,22 +4,42 @@ body {
 
 #title {
     color: white;
-    padding: 15px;
+    padding: 25px;
     font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
-    font-size: 50px;
+    font-size: 70px;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
 }
 
+#navbar-brand {
+    color: rgb(196, 196, 196);
+    padding: 10px;
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size: 10;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 800;
+}
+
 .nav-item {
-    padding: 15px;
+    padding: 12px;
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+}
+
+#search-bar {
+    padding: 12px;
 }
 
 #top-content {
     background-color: black;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 #search {
