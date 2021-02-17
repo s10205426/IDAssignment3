@@ -1,17 +1,19 @@
 const API_KEY = 'd8bf019d0cca372bd804735f172f67e8';
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
-const url = 'https://api.themoviedb.org/3/search/movie?api_key=d8bf019d0cca372bd804735f172f67e8';
-
 const searchId = document.querySelector('#search');
 const inputId = document.querySelector('#inputValue');
 const movieSearchable = document.querySelector('#movies-searchable');
 
+function generateUrl(path) {
+    const url = `https://api.themoviedb.org/3${path}?api_key=d8bf019d0cca372bd804735f172f67e8`;
+    return url;
+}
 function movieSection(movies) { //Return movie image information
     return movies.map((movie) => {
-        if (movie.poster_path) {
-            return `<img
-                src=${IMAGE_URL + movie.poster_path}
+        if (movie.poster_path) { //Display poster if image is available
+            return `
+                <img src=${IMAGE_URL + movie.poster_path}
                 data-movie-id=${movie.id}
             />`;
         }
@@ -26,12 +28,9 @@ function createMovieContainer(movies) {
 
     const movieTemplate = //Contains movie data to be displayed
     `
-        <section class="section">
-            ${movieSection(movies)} 
-        </section>
-        <div class="content">
-            <p id="content-close">X</p>
-        </div>
+            <section class="section">
+                ${movieSection(movies)}
+            </section>
     `;
 
     movieElement.innerHTML = movieTemplate;
@@ -46,15 +45,28 @@ function renderSearchMovies(data) {
     console.log("Data: ", data);
 }
 
+function requestMovies(url, onComplete, onError) {
+    fetch(url)
+        .then((res) => res.json())
+        .then(onComplete)
+        .catch(onError);
+}
+
+function searchMovie(value) {
+    const path = '/search/movie';
+    const url = generateUrl(path) + '&query=' + value;
+
+    requestMovies(url, renderSearchMovies, handleError);
+}
+
+function handleError(error) {
+    console.log('Error: ', error);
+}
+
 $(searchId).on("click", function(event) { //Initiate API search on click
     event.preventDefault();
     const value = inputId.value;
-    const newUrl = url + '&query=' + value;
-
-    fetch(newUrl)
-        .then((res) => res.json())
-        .then(renderSearchMovies)
-
+    searchMovie(value);
     inputId.value = '';
     console.log("Value: ", value);
 });

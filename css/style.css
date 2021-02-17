@@ -36,7 +36,8 @@ body {
 }
 
 #movies-searchable {
-    margin-top: 20px;
+    margin: 35px;
+    padding: 75px;
 }
 
 #inputValue {
@@ -58,8 +59,9 @@ body {
 
 section {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    overflow-x: auto;
+    justify-content: center;
 }
 
 section img {
