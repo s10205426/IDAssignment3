@@ -12,48 +12,17 @@
       background-color: #2c2c2c;
     }
   </style>
-  </head>
+</head>
 
 <body>
-  <!--Navbar-->
-  <div id="top-content">
-    <header>
-      <h1 id="title">Movii</h1>
-    </header>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <h1 id="navbar-brand">Navigation</h1>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="topRated.html">Top Rated Movies</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="upcoming.html">Upcoming Movies</a>
-            </li>
-          </ul>
-          <form id="search-bar" class="d-flex">
-            <input id="inputValue" class="form-control me-2" type="search" placeholder="Search for movie..." aria-label="Search">
-            <button id="search" class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </div>
 
   <div class="container" style="border: 10px solid rgb(37, 37, 37);;" id="main-content">
     <h1 id="movie-title" style="font-size: 50px;">Title</h1>
     <!--image goes here-->
     <h1 id="movie-id">Movie ID: </h1>
   </div>
+
+  <div id="movies-searchable"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
