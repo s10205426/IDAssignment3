@@ -52,3 +52,5 @@ $(searchId).on("click", function(event) { //Initiate API search on click
     searchMovie(value);
     inputId.value = '';
 });
+
+getTopRatedMovie();

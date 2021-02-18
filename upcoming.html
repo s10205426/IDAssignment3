@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta charset="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css" type="text/css">
-  <title>Upcoming Movies</title>
+  <title>Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <style>
     body {
       background-color: #2c2c2c;
     }
   </style>
-</head>
+  </head>
 
 <body>
   <!--Navbar-->
@@ -31,28 +31,30 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="toprated.html">Top Rated Movies</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="upcoming.html">Upcoming Movies</a>
+              <a class="nav-link" href="upcoming.html">Upcoming Movies</a>
             </li>
           </ul>
           <form id="search-bar" class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search for a movie..." aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input id="inputValue" class="form-control me-2" type="search" placeholder="Search for movie..." aria-label="Search">
+            <button id="search" class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
       </div>
     </nav>
   </div>
 
+  <div id="movies-searchable"></div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
   <script src="./js/apiFetching.js"></script>
-  <script src="./js/script.js"></script>
+  <script src="./js/scriptUpcoming.js"></script>
 </body>
 
 </html>

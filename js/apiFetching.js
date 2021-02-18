@@ -19,3 +19,17 @@ function searchMovie(value) {
 
     requestMovies(url, renderSearchMovies, handleError);
 }
+
+function getTopRatedMovie(value) {
+    const path = '/movie/top_rated';
+    const url = generateUrl(path) + '&query=' + value;
+
+    requestMovies(url, renderSearchMovies, handleError);
+}
+
+function getUpcomingMovie(value) {
+    const path = '/movie/upcoming';
+    const url = generateUrl(path) + '&query=' + value;
+
+    requestMovies(url, renderSearchMovies, handleError);
+}
