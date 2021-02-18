@@ -9,6 +9,7 @@ function movieSection(movies) { //Return movie image information
     movies.map((movie) => {
         if (movie.poster_path) { //Display poster if image is available
             const img = document.createElement('img');
+            img.setAttribute('class', 'movie-poster');
             img.src = IMAGE_URL + movie.poster_path;
             img['data-movie-id'] = IMAGE_URL + movie.poster_path;
 
@@ -22,7 +23,7 @@ function createMovieContainer(movies) {
 
     //Create an element to have movie data appended on the spot
     const movieElement = document.createElement('div');
-    movieElement.setAttribute('class', 'movie');
+    movieElement.setAttribute('class', 'container movie');
 
     const content = document.createElement('div');
     content.classList = 'content';
