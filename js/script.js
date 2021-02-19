@@ -9,7 +9,7 @@ function createImageContainer(imageUrl, id) {
     tempDiv.setAttribute('data-id', id);
 
     const movieElement = `
-        <img src="${imageUrl}" alt="" data-movie-id="${id}" onclick="movieSelected('${id}')">
+        <img src="${imageUrl}" alt="" data-movie-id="${id}" onclick="movieSelected('${id}')" class="movie-poster">
     `;
     tempDiv.innerHTML = movieElement;
 
@@ -39,7 +39,7 @@ function generateMoviesBlock(data) {
 
 function createMovieContainer(section) {
     const movieElement = document.createElement('div');
-    movieElement.setAttribute('class', 'movie');
+    movieElement.setAttribute('class', 'container movie');
 
     const template = `
     `;
