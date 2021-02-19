@@ -60,7 +60,6 @@ function handleError(error) {
 }
 
 function movieSelected(id) {
-    console.log('hi');
     sessionStorage.setItem('movieId', id);
     window.location = 'movieInfo.html';
     return false;
@@ -96,7 +95,7 @@ function getMovie(data) {
         </div>
         <div class="row">
             <div class="well">
-                <h4>Plot</h4>
+                <h4>Plot:</h4>
                 <h5>${data.overview}<h5>
                 <a href="index.html" class="btn"><h6>Go Back</h6></a>
             </div>
@@ -112,12 +111,3 @@ $(searchId).on("click", function(event) { //Initiate API search on click
     searchMovie(value);
     inputId.value = '';
 });
-
-$(document).on("click", function(event) { //Checking purpose to be deleted
-    const target = event.target;
-    
-    if (target.tagName.toLowerCase() === 'img') {
-        console.log('hello');
-        console.log(event);
-    }
-})

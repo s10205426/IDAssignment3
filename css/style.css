@@ -14,7 +14,7 @@ body {
 
 .nav-item {
     padding: 12px;
-    padding-left: 30px;
+    padding-left: 10px;
     font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
     font-size: 20px;
     font-style: normal;
@@ -140,6 +140,7 @@ img:hover {
 
 h4{
     color:rgb(218, 218, 218);
+    padding-top: 20px;
 }
 
 h5{
@@ -148,5 +149,20 @@ h5{
 
 h6 {
     color: white;
-    border-color: #198754;
+    background-color: rgb(26, 26, 26);
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+h6:hover {
+    margin-left: 0 30px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.nav_align {
+    display: flex;
+    justify-content: flex-end;
 }
