@@ -9,7 +9,7 @@ function createImageContainer(imageUrl, id) {
     tempDiv.setAttribute('data-id', id);
 
     const movieElement = `
-        <img src="${imageUrl}" alt="" data-movie-id="${id}" onclick="movieSelected('${id}')">
+        <img src="${imageUrl}" alt="" data-movie-id="${id}" onclick="movieSelected('${id}')" class="movie-poster">
     `;
     tempDiv.innerHTML = movieElement;
 
@@ -39,7 +39,7 @@ function generateMoviesBlock(data) {
 
 function createMovieContainer(section) {
     const movieElement = document.createElement('div');
-    movieElement.setAttribute('class', 'movie');
+    movieElement.setAttribute('class', 'container movie');
 
     const template = `
     `;
@@ -66,8 +66,44 @@ function movieSelected(id) {
     return false;
 }
 
-function getMovie() {
-    let movieId = sessionStorage.getItem('movieId');
+function getMovie(data) {
+    let moviePosterPath = IMAGE_URL + data.poster_path;
+
+    let genreList = '';
+    for (i=0; i < data.genres.length; i++) {
+        genreList += data.genres[i].name + ', ';
+    }
+
+    let productionList = '';
+    for (i=0; i < data.production_companies.length; i++) {
+        productionList += data.production_companies[i].name + ', ';
+    }
+    
+    let output = `
+        <div class="row">
+            <div class="col-md-4">
+                <img src="${moviePosterPath}" class="thumbnail">
+            </div>
+            <div class="col-md-8">
+                <h4>${data.title}</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Genre: </strong>${genreList.slice(0, -2)}</li>
+                    <li class="list-group-item"><strong>Release Date: </strong>${data.release_date}</li>
+                    <li class="list-group-item"><strong>Production: </strong>${productionList.slice(0, -2)}</li>
+                    <li class="list-group-item"><strong>Ratings: </strong>${data.vote_average}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="well">
+                <h4>Plot</h4>
+                <h5>${data.overview}<h5>
+                <a href="index.html" class="btn"><h6>Go Back</h6></a>
+            </div>
+        </div>
+    `;
+    
+    $('#movie').html(output);
 }
 
 $(searchId).on("click", function(event) { //Initiate API search on click

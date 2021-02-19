@@ -13,23 +13,31 @@ function requestMovies(url, onComplete, onError) {
         .catch(onError);
 }
 
-function searchMovie(value) {
+function searchMovie(value) { //Get API link for movie search
     const path = '/search/movie';
     const url = generateUrl(path) + '&query=' + value;
 
     requestMovies(url, renderSearchMovies, handleError);
 }
 
-function getTopRatedMovie(value) {
+function getTopRatedMovie() { //Get API link for top rated movie
     const path = '/movie/top_rated';
-    const url = generateUrl(path) + '&query=' + value;
+    const url = generateUrl(path);
 
     requestMovies(url, renderSearchMovies, handleError);
 }
 
-function getUpcomingMovie(value) {
+function getUpcomingMovie() { //Get API link for upcoming movie
     const path = '/movie/upcoming';
-    const url = generateUrl(path) + '&query=' + value;
+    const url = generateUrl(path);
 
     requestMovies(url, renderSearchMovies, handleError);
+}
+
+function getMovieDetails() { //Get API link for movie details
+    let movieId = sessionStorage.getItem('movieId');
+    const path = `/movie/${movieId}`
+    const url = generateUrl(path);
+
+    requestMovies(url, getMovie, handleError);
 }

@@ -17,9 +17,7 @@
 <body>
 
   <div class="container" style="border: 10px solid rgb(37, 37, 37);;" id="main-content">
-    <h1 id="movie-title" style="font-size: 50px;">Title</h1>
-    <!--image goes here-->
-    <h1 id="movie-id">Movie ID: </h1>
+    <div id="movie" class="well"></div>
   </div>
 
   <div id="movies-searchable"></div>
@@ -28,6 +26,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
   <script src="./js/apiFetching.js"></script>
   <script src="./js/script.js"></script>
+  <script>
+    getMovieDetails();
+  </script>
 </body>
 
 </html>
