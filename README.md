@@ -1,6 +1,8 @@
 # Movii
 
 Movii is a Movie searching website. The site allows users to view popular movies with high ratings, upcoming movies that will be released at ta later date, and also look for any existing movies of their choice by searching for its name in the website.
+
+[Video Pitch](https://drive.google.com/file/d/1lr7CKkiHXEP3-m0eONml31KaSAw0BQvt/view?usp=sharing)
  
 ## Design Process
 
